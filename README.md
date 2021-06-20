@@ -4,7 +4,7 @@
 ## Como rodar o projeto?
 
 ```
-git clone git@github.com:jobconvo/DEV-IMPACT-03-DEPLOY-AWS-EBS.git dev-impact-03-deploy-aws-ebs
+git clone https://github.com/jobconvo/DEV-IMPACT-03-DEPLOY-AWS-EBS.git dev-impact-03-deploy-aws-ebs
 cd dev-impact-03-deploy-aws-ebs
 ```
 
