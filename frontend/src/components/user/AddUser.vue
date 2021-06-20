@@ -31,10 +31,10 @@
 import { eventBus } from '../../main';
 
 const endpoint = 'http://127.0.0.1:8000'
+const token = process.env.VUE_APP_TOKEN
 
 // https://github.com/axios/axios
 import axios from 'axios'
-
 
 export default {
   name: 'AddUser',
@@ -59,7 +59,7 @@ export default {
       };
 
       axios.post(endpoint + '/api/users/', data, {
-        headers: { Authorization: 'Token 2071314e58a47390b04990ac8f81e0d2090290a3' }
+        headers: { Authorization: 'Token ' + token }
       }).then((response) => {
         // enviando dados para outros components
         eventBus.$emit('submit', response.data);

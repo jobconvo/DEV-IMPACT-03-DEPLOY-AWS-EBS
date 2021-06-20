@@ -60,6 +60,7 @@
 import { eventBus } from '../../main';
 
 const endpoint = 'http://127.0.0.1:8000'
+const token = process.env.VUE_APP_TOKEN
 
 // https://github.com/axios/axios
 import axios from 'axios'
@@ -74,7 +75,7 @@ export default {
         email: '',
         first_name: '',
         last_name: ''
-      },
+      }
     }
   },
   created() {
@@ -88,6 +89,7 @@ export default {
   },
   methods: {
     getUsers: async function() {
+      console.log(token)
       axios.get(endpoint + '/api/users/').then((response) => {
         this.users = response.data;
       })
@@ -107,7 +109,7 @@ export default {
     saveItem() {
       const data = { ...this.editingItem };
       axios.put(endpoint + '/api/users/' + data.id + '/', data, {
-        headers: { Authorization: 'Token 4fe87c595940eb5213e1f4345fa5e63d468fd807' }
+        headers: { Authorization: 'Token ' + token }
       }).then(() => {
         this.isVisible = false;
         this.getUsers();
@@ -115,7 +117,7 @@ export default {
     },
     deleteItem(item) {
       axios.delete(endpoint + '/api/users/' + item.id + '/', {
-        headers: { Authorization: 'Token 4fe87c595940eb5213e1f4345fa5e63d468fd807' }
+        headers: { Authorization: 'Token ' + token }
       }).then(() => {
         var idx = this.users.results.indexOf(item)
         this.users.results.splice(idx, 1)
