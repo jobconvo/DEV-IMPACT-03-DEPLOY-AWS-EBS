@@ -30,7 +30,7 @@
 <script>
 import { eventBus } from '../../main';
 
-const endpoint = 'http://127.0.0.1:8000'
+const endpoint = 'Insira seu endpoint aqui'
 const token = process.env.VUE_APP_TOKEN
 
 // https://github.com/axios/axios
