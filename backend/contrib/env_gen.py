@@ -18,5 +18,5 @@ INTERNAL_IPS=127.0.0.1
 with open('.env', 'w') as configfile:
     configfile.write(CONFIG_STRING)
 
-print('Success!')
+print('Success!!')
 print('Type: cat .env')
